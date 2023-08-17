@@ -1148,7 +1148,7 @@ class LoRANetwork(torch.nn.Module):
             if not hasattr(org_module, "_lora_org_weight"):
                 sd = org_module.state_dict()
                 org_module._lora_org_weight = sd["weight"].detach().clone()
-                org_module._lora_restored = True
+                org_module._lora_restored = False
 
     def restore_weights(self):
         # 重みのリストアを行う
